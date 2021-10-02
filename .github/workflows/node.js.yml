@@ -1,4 +1,4 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Firebase CI
@@ -35,7 +35,7 @@ jobs:
       with:
         name: build
         path: build
-  
+        
   deploy:
     name: Deploy
     needs: build
@@ -53,3 +53,4 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
